@@ -6,6 +6,7 @@ Co-designed by [Floridia](https://github.com/florix) and [Margelli](https://gith
 ## Summary
 This project consist in the design and implementation of an advanced DLX processor. The design is based on the conceptual processor originally proposed by D. Patterson and J. Hennessy.
 With respect to the basic implementation, we have added the following features:
+
 1. Added 26 instructions for a total of 53 (refer to Appendix A for the whole list);
 2. Basic MMUs for implementing the unaligned access to data memory (DRAM) with a specific protocol;
 3. Static branch prediction (always not taken) with a 2 clock cycle penalty in case of a miss. Full support of the branch delay slot policy (according to the MIPS specifications);
