@@ -2,6 +2,11 @@
 ![Alt text](./mdimgs/phys.png?raw=true "Example")
 Co-designed by [Floridia](https://github.com/florix) and [Margelli](https://github.com/sinkswim).
 
+This readme contains all informations about the design.  The repo is structured as follows:
+* /DLX_simulation_cfg: contains VHDL files of the simulation-friendly implementation as well as assembly benchmark programs (/sim) and a testbench;
+* /synthesis: synthesizable (no IRAM and DRAM) version of the DLX, syntesis scripts and results (on Synopsys Design Compiler);
+* /physical_layout: all about the physical design based on the 45nm technology (in Cadence Encounter).
+
 
 ## Summary
 This project consist in the design and implementation of an advanced DLX processor. The design is based on the conceptual processor originally proposed by D. Patterson and J. Hennessy.
