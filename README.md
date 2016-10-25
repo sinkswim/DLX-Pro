@@ -13,25 +13,23 @@ With respect to the basic implementation, we have added the following features:
 
 ## Index
 
-1 Introduction 1
-1.1 Notes ............................................. 2
-2 Functional schema
-3
-........................................ 3 ........................................ 4 ........................................ 5 ........................................ 7
-2.1 Fetch......
-2.2 Decode.....
-2.3 Execute....
-2.4 Memory ....
-2.5 Writeback........................................... 10
-2.6 ControlUnit ......................................... 10
-2.7 PipelineRegisters....................................... 11
-3 Implementation 12
-3.1 65nmSynthesis........................................ 12 3.2 45nmSynthesis........................................ 14
-4 Conclusions
-5 References
-A Instruction set
-B DLX Datapath Schematic
-16 17 18 19
+1. Introduction
+ 1. Notes 
+2. Functional schema
+ 1. Fetch
+ 2. Decode
+ 3. Execute
+ 4. Memory 
+ 5. Writeback
+ 6. ControlUnit
+ 7. PipelineRegisters
+3. Implementation 12
+ 1. 65nmSynthesis
+ 2. 45nmSynthesis
+4. Conclusions
+5. References
+6. Appendix A: Instruction set
+7. Appendix B: DLX Datapath Schematic
 
 ## Introduction
 
