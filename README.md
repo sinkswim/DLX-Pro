@@ -1,5 +1,5 @@
 # DLX-Pro
-Co-designed by Floridia (florix) and Margelli (sinkswim).
+Co-designed by [Floridia](https://github.com/florix) and [Margelli](https://github.com/sinkswim).
 
 ## Summary
 This project consist in the design and implementation of an advanced DLX processor. The design is based on the conceptual processor originally proposed by D. Patterson and J. Hennessy.
