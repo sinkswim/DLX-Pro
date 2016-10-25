@@ -41,7 +41,8 @@ There are 32 general purpose 32-bit integer registers, organized into a register
 Instructions have a fixed length of categories (table 1.1).
 32 bits and a specific format. They are divided into three main
 
-<table>
+![Alt text](./mdimgs/.png?raw=true "Example")
+![Alt text](./mdimgs/tab1.png?raw=true "Example")
 
 ### Notes
 
@@ -59,8 +60,8 @@ It is made of the following subunits:
 * IRAM block: it’s the unit responsible for exchanging data with the IRAM. It is composed of two MMU units, which translate the word-aligned address into a unaligned address. It also receives a Flush signal, which is used for flushing the pipeline in case of a branch or jump instruction;
 * Increment PC: it increments the current value of the program counter.
 
-<img>
-<table>
+![Alt text](./mdimgs/fetch.png?raw=true "Example")
+![Alt text](./mdimgs/tab2.png?raw=true "Example")
 
 ### Decode
 
@@ -70,7 +71,7 @@ It is made of the following subunits:
 * Hazard Detection Unit (HDU): collaborates with the forwarding unit in the Execute stage. It inserts a NOP (with the Mux stall) to avoid hazards and controls registers such that instructions in the pipeline are stalled. Due to the presence of the forwarding unit, the only hazard that this unit handles is the one raised by a load instruction followed by another instruction, which in turn tries to use the same register that has to be written by the load. As a matter of example, table 2.1 illustrates how, without the HDU, wrong data will be used by the ADD instruction. By introducing the HDU we obtain a behavior such as the one in in table 2.2. Where S denotes the presence of a stall, that is a NOP has been forced into the pipeline;
 * Mux stall: it is controlled directly by the HDU, it forces the control word of a NOP.
 
-<img>
+![Alt text](./mdimgs/decode.png?raw=true "Example")
 
 ### Execute
 
@@ -79,18 +80,18 @@ It is made of the following subunits:
 * Branch circuit: which determines if a branch is to be taken (the produced signal takeBranch is sent to MEM stage);
 * Other elements in the Execute stage are the PSW register, multiplexers, adders etc. which are not described in detail here.
 
-<img>
+![Alt text](./mdimgs/execute.png?raw=true "Example")
 
 ### Memory
 
 * DRAM: Asynchronous read and write RAM1. The data ram is where data can be read/written and this implementation features basic MMU circuits. Basic behavior of MMU IN: In case of sw and lw instr. only addresses aligned to multiples of 4 are permitted (otherwise the unaligned flag is set in the PSW); in case of a lhu the address must be multiple of 2; in all other cases (sb, lb, lbu). The MMU Out instead is responsible for extracting and sending out the correct portion of a word out of the DRAM. These two MMUs are provided with the processor core. As previously mentioned, the chosen DRAM must support a particular protocol for exchanging data with these units. In addition to the standard signals for data and address, four more signals should be present on the memory controller interface: read op, write op, nibble (2bit signal), write byte.
 In case of a read operation, their configuration is:
-<img>
+![Alt text](./mdimgs/memop1.png?raw=true "Example")
 and the memory returns the content of the address specified on the address port. The behavior can be synthesized with the pseudo-code:
-<img>
+![Alt text](./mdimgs/memop2.png?raw=true "Example")
 if write byte is set to ’1’, it means a byte will be stored into the memory. Hence, the value spec- ified in the nibble signal becomes relevant. The pseudo-code for implementing these operations is:
-<img>
-<img>
+![Alt text](./mdimgs/memop3.png?raw=true "Example")
+![Alt text](./mdimgs/memop4.png?raw=true "Example")
 
 * PCsrc signal: this signal is used to notify the Fetch stage that a branch has to be taken (produced by making sure the current instruction is a branch instr. and the branch has to be taken (takeBranch=’1’)).
 
@@ -98,25 +99,25 @@ if write byte is set to ’1’, it means a byte will be stored into the memory.
 
 (1) As with the IRAM the DRAM core memory has been removed during synthesis. In this scenario, since the DLX interfaces with an external DRAM signals from the MMU circuits have become I/O ports of the main element.
 
-<img>
+![Alt text](./mdimgs/memory.png?raw=true "Example")
 
 ### Writeback
 
 * MemtoReg Mux: used to select where the data comes from (memory or execution stage) and sends it to Execute and Decode stages;
 * Link Mux: it normally passes the destination register address from the instruction or (less frequently) forces the address of R31 (in case of jalr and jal instructions).
-<img>
+![Alt text](./mdimgs/writeback.png?raw=true "Example")
 
 ### Control Unit
 
 The control unit generates the control signals for the current instruction in the decode stage. Its also generates the opcode for the ALU. It has been implemented according to hardwired style so control words are already stored into an LUT.
 
-<img>
+![Alt text](./mdimgs/cu.png?raw=true "Example")
 
 ### Pipeline Registers
 
 These registers are used to propagate the instructions, data and control signals through the pipeline. It is worth mentioning that IF/ID register (that is the pipeline register between the fetch and decode stage) has an additional control signals (flush) to flush the pipeline in case of a branch or jump instruction. The flush signal is controlled by a circuit in the memory stage. Once asserted it behaves as a reset signal. Moreover, it is also fed with a control signal for avoiding new data being loaded, which is directly controlled by the HDU for forcing a stall.
 
-<img>
+![Alt text](./mdimgs/pipreg.png?raw=true "Example")
 
 ## Implementation
 
@@ -125,24 +126,24 @@ For what concerns the implementation of the DLX, i.e. synthesis and physical des
 ### 65nm Synthesis
 
 The first one is an unconstrained synthesis, with a 3ns clock period. We used this synthesis as a base for the others in order to compare di↵erent results.
-<img>
+![Alt text](./mdimgs/syn1.png?raw=true "Example")
 
 Our intent was to design a low-power processor, hence the second and the third synthesis were focused on power consumption reduction. The second synthesis exploits the Dual Vth assignment technique, aiming at reducing the leakage power of the circuit while maintaining the same clock period (3ns).
 It is worth noting that by using this technique the leakage power has been reduced drastically with respect to the first synthesis:
-<img>
+![Alt text](./mdimgs/syn2.png?raw=true "Example")
 
 The third synthesis enables the insertion of clock gating elements via Design Compiler. The goal here was to reduce the dynamic power consumption. This approach yielded a negative slack, thus with a clock period of 3ns it’s not feasible to obtain a correct behavior of our system. Furthermore, in order to fully evaluate the benefits of this technique, post-synthesis simulation and analysis with Prime Time are necessary to correctly estimate the switching activity.
-<img>
-<img>
+![Alt text](./mdimgs/syn3.png?raw=true "Example")
+![Alt text](./mdimgs/syn32.png?raw=true "Example")
 
 The final synthesis is similar to the second one (dual Vth assignment) but with a higher clock period. A realistic clock period for a low-power embedded system would certainly be higher than 3ns in order to reduce the dynamic power. A reasonable clock frequency for this kind of system is 16MHz (clock period of 62.5ns).
-<img>
+![Alt text](./mdimgs/syn4.png?raw=true "Example")
 
 ### 45nm Synthesis
 
 The results of this synthesis have been used to perform the physical layout of the processor with Cadence Encounter. No particular optimizations were performed with this technology as our necessity was to implement the physical design.
-<img>
-<img>
+![Alt text](./mdimgs/syn5.png?raw=true "Example")
+![Alt text](./mdimgs/syn52.png?raw=true "Example")
 
 ## Conclusions
 
@@ -165,10 +166,10 @@ These improvements will boost the performance, while damaging the power consumpt
 ## Appendix A: Instruction set
 
 The supported instructions are here reported in no particular order.
-<img>
+![Alt text](./mdimgs/instset.png?raw=true "Example")
 
 ## Appendix B: DLX Datapath Schematic
-<img>
+![Alt text](./mdimgs/dp.png?raw=true "Example")
 
 
 
