@@ -1,0 +1,343 @@
+
+
+
+
+
+Tracing Clock clk
+
+****** Clock Tree (clk) Structure
+Nr. Subtrees                   : 1
+Nr. Sinks                      : 287
+Nr.          Rising  Sync Pins : 287
+Nr. Inverter Rising  Sync Pins : 0
+Nr.          Falling Sync Pins : 0
+Nr. Inverter Falling Sync Pins : 0
+Nr. Unsync Pins                : 0
+
+** Leaf Pins
+CELL (PORT)                            Nr.
+-----------------------------------------------
+DFF_X1 (CK)                             223
+DFFR_X1 (CK)                            61
+DFFS_X1 (CK)                            3
+-----------------------------------------------
+
+
+
+
+** Unsync Pins
+CELL (PORT)                            Nr.
+-----------------------------------------------
+-----------------------------------------------
+
+
+
+
+** Gate Component Input Pins
+CELL (PORT)                            Nr.
+-----------------------------------------------
+-----------------------------------------------
+
+
+
+** Subtree Detail
+*DEPTH 0 Input_Pin: (EMPTY) Output_Pin: (clk) Cell: (EMPTY) Net: (clk) NO-INV
+          Nr. of Exclude Pins           : 0
+          Nr. of Unsync Pins            : 0
+          Nr. of Total Sync Pins        : 287
+          Nr. of     Rising  Sync Pins  : 287
+          Nr. of Inv Rising  Sync Pins  : 0
+          Nr. of     Falling Sync Pins  : 0
+          Nr. of Inv Falling Sync Pins  : 0
+          Nr. of Gated Clocks           : 0
+***********************************************************
+
+****** Pre CTS Detail Structure for clock clk
+*DEPTH 0: clk
+ (Sync)u_DataPath/u_fetch/pc1/to_iram_block_reg[31]/CK
+ (Sync)u_DataPath/u_fetch/pc1/to_iram_block_reg[30]/CK
+ (Sync)u_DataPath/u_fetch/pc1/to_iram_block_reg[29]/CK
+ (Sync)u_DataPath/u_fetch/pc1/to_iram_block_reg[28]/CK
+ (Sync)u_DataPath/u_fetch/pc1/to_iram_block_reg[27]/CK
+ (Sync)u_DataPath/u_fetch/pc1/to_iram_block_reg[26]/CK
+ (Sync)u_DataPath/u_fetch/pc1/to_iram_block_reg[25]/CK
+ (Sync)u_DataPath/u_fetch/pc1/to_iram_block_reg[24]/CK
+ (Sync)u_DataPath/u_fetch/pc1/to_iram_block_reg[23]/CK
+ (Sync)u_DataPath/u_fetch/pc1/to_iram_block_reg[22]/CK
+ (Sync)u_DataPath/u_fetch/pc1/to_iram_block_reg[21]/CK
+ (Sync)u_DataPath/u_fetch/pc1/to_iram_block_reg[20]/CK
+ (Sync)u_DataPath/u_fetch/pc1/to_iram_block_reg[19]/CK
+ (Sync)u_DataPath/u_fetch/pc1/to_iram_block_reg[18]/CK
+ (Sync)u_DataPath/u_fetch/pc1/to_iram_block_reg[17]/CK
+ (Sync)u_DataPath/u_fetch/pc1/to_iram_block_reg[16]/CK
+ (Sync)u_DataPath/u_fetch/pc1/to_iram_block_reg[15]/CK
+ (Sync)u_DataPath/u_fetch/pc1/to_iram_block_reg[14]/CK
+ (Sync)u_DataPath/u_fetch/pc1/to_iram_block_reg[13]/CK
+ (Sync)u_DataPath/u_fetch/pc1/to_iram_block_reg[12]/CK
+ (Sync)u_DataPath/u_fetch/pc1/to_iram_block_reg[11]/CK
+ (Sync)u_DataPath/u_fetch/pc1/to_iram_block_reg[10]/CK
+ (Sync)u_DataPath/u_fetch/pc1/to_iram_block_reg[9]/CK
+ (Sync)u_DataPath/u_fetch/pc1/to_iram_block_reg[8]/CK
+ (Sync)u_DataPath/u_fetch/pc1/to_iram_block_reg[7]/CK
+ (Sync)u_DataPath/u_fetch/pc1/to_iram_block_reg[6]/CK
+ (Sync)u_DataPath/u_fetch/pc1/to_iram_block_reg[5]/CK
+ (Sync)u_DataPath/u_fetch/pc1/to_iram_block_reg[4]/CK
+ (Sync)u_DataPath/u_fetch/pc1/to_iram_block_reg[3]/CK
+ (Sync)u_DataPath/u_fetch/pc1/to_iram_block_reg[2]/CK
+ (Sync)u_DataPath/u_fetch/pc1/to_iram_block_reg[1]/CK
+ (Sync)u_DataPath/u_fetch/pc1/to_iram_block_reg[0]/CK
+ (Sync)u_DataPath/u_ifidreg/instruction_decode_reg[31]/CK
+ (Sync)u_DataPath/u_ifidreg/instruction_decode_reg[30]/CK
+ (Sync)u_DataPath/u_ifidreg/instruction_decode_reg[29]/CK
+ (Sync)u_DataPath/u_ifidreg/instruction_decode_reg[28]/CK
+ (Sync)u_DataPath/u_ifidreg/instruction_decode_reg[27]/CK
+ (Sync)u_DataPath/u_ifidreg/instruction_decode_reg[26]/CK
+ (Sync)u_DataPath/u_ifidreg/instruction_decode_reg[25]/CK
+ (Sync)u_DataPath/u_ifidreg/instruction_decode_reg[24]/CK
+ (Sync)u_DataPath/u_ifidreg/instruction_decode_reg[23]/CK
+ (Sync)u_DataPath/u_ifidreg/instruction_decode_reg[22]/CK
+ (Sync)u_DataPath/u_ifidreg/instruction_decode_reg[21]/CK
+ (Sync)u_DataPath/u_ifidreg/instruction_decode_reg[20]/CK
+ (Sync)u_DataPath/u_ifidreg/instruction_decode_reg[19]/CK
+ (Sync)u_DataPath/u_ifidreg/instruction_decode_reg[18]/CK
+ (Sync)u_DataPath/u_ifidreg/instruction_decode_reg[17]/CK
+ (Sync)u_DataPath/u_ifidreg/instruction_decode_reg[16]/CK
+ (Sync)u_DataPath/u_ifidreg/instruction_decode_reg[15]/CK
+ (Sync)u_DataPath/u_ifidreg/instruction_decode_reg[14]/CK
+ (Sync)u_DataPath/u_ifidreg/instruction_decode_reg[13]/CK
+ (Sync)u_DataPath/u_ifidreg/instruction_decode_reg[12]/CK
+ (Sync)u_DataPath/u_ifidreg/instruction_decode_reg[11]/CK
+ (Sync)u_DataPath/u_ifidreg/instruction_decode_reg[10]/CK
+ (Sync)u_DataPath/u_ifidreg/instruction_decode_reg[9]/CK
+ (Sync)u_DataPath/u_ifidreg/instruction_decode_reg[8]/CK
+ (Sync)u_DataPath/u_ifidreg/instruction_decode_reg[7]/CK
+ (Sync)u_DataPath/u_ifidreg/instruction_decode_reg[6]/CK
+ (Sync)u_DataPath/u_ifidreg/instruction_decode_reg[5]/CK
+ (Sync)u_DataPath/u_ifidreg/instruction_decode_reg[4]/CK
+ (Sync)u_DataPath/u_ifidreg/instruction_decode_reg[3]/CK
+ (Sync)u_DataPath/u_ifidreg/instruction_decode_reg[2]/CK
+ (Sync)u_DataPath/u_ifidreg/instruction_decode_reg[1]/CK
+ (Sync)u_DataPath/u_ifidreg/instruction_decode_reg[0]/CK
+ (Sync)u_DataPath/u_ifidreg/new_pc_reg[31]/CK
+ (Sync)u_DataPath/u_ifidreg/new_pc_reg[30]/CK
+ (Sync)u_DataPath/u_ifidreg/new_pc_reg[29]/CK
+ (Sync)u_DataPath/u_ifidreg/new_pc_reg[28]/CK
+ (Sync)u_DataPath/u_ifidreg/new_pc_reg[27]/CK
+ (Sync)u_DataPath/u_ifidreg/new_pc_reg[26]/CK
+ (Sync)u_DataPath/u_ifidreg/new_pc_reg[25]/CK
+ (Sync)u_DataPath/u_ifidreg/new_pc_reg[24]/CK
+ (Sync)u_DataPath/u_ifidreg/new_pc_reg[23]/CK
+ (Sync)u_DataPath/u_ifidreg/new_pc_reg[22]/CK
+ (Sync)u_DataPath/u_ifidreg/new_pc_reg[21]/CK
+ (Sync)u_DataPath/u_ifidreg/new_pc_reg[20]/CK
+ (Sync)u_DataPath/u_ifidreg/new_pc_reg[19]/CK
+ (Sync)u_DataPath/u_ifidreg/new_pc_reg[18]/CK
+ (Sync)u_DataPath/u_ifidreg/new_pc_reg[17]/CK
+ (Sync)u_DataPath/u_ifidreg/new_pc_reg[16]/CK
+ (Sync)u_DataPath/u_ifidreg/new_pc_reg[15]/CK
+ (Sync)u_DataPath/u_ifidreg/new_pc_reg[14]/CK
+ (Sync)u_DataPath/u_ifidreg/new_pc_reg[13]/CK
+ (Sync)u_DataPath/u_ifidreg/new_pc_reg[12]/CK
+ (Sync)u_DataPath/u_ifidreg/new_pc_reg[11]/CK
+ (Sync)u_DataPath/u_ifidreg/new_pc_reg[10]/CK
+ (Sync)u_DataPath/u_ifidreg/new_pc_reg[9]/CK
+ (Sync)u_DataPath/u_ifidreg/new_pc_reg[8]/CK
+ (Sync)u_DataPath/u_ifidreg/new_pc_reg[7]/CK
+ (Sync)u_DataPath/u_ifidreg/new_pc_reg[6]/CK
+ (Sync)u_DataPath/u_ifidreg/new_pc_reg[5]/CK
+ (Sync)u_DataPath/u_ifidreg/new_pc_reg[4]/CK
+ (Sync)u_DataPath/u_ifidreg/new_pc_reg[3]/CK
+ (Sync)u_DataPath/u_ifidreg/new_pc_reg[2]/CK
+ (Sync)u_DataPath/u_ifidreg/new_pc_reg[1]/CK
+ (Sync)u_DataPath/u_ifidreg/new_pc_reg[0]/CK
+ (Sync)u_DataPath/u_decode_unit/hdu_0/current_state_reg[0]/CK
+ (Sync)u_DataPath/u_decode_unit/hdu_0/current_state_reg[1]/CK
+ (Sync)u_DataPath/u_idexreg/cw_to_ex_reg[21]/CK
+ (Sync)u_DataPath/u_idexreg/cw_to_ex_reg[20]/CK
+ (Sync)u_DataPath/u_idexreg/cw_to_ex_reg[19]/CK
+ (Sync)u_DataPath/u_idexreg/cw_to_ex_reg[18]/CK
+ (Sync)u_DataPath/u_idexreg/cw_to_ex_reg[17]/CK
+ (Sync)u_DataPath/u_idexreg/cw_to_ex_reg[16]/CK
+ (Sync)u_DataPath/u_idexreg/cw_to_ex_reg[15]/CK
+ (Sync)u_DataPath/u_idexreg/cw_to_ex_reg[14]/CK
+ (Sync)u_DataPath/u_idexreg/cw_to_ex_reg[13]/CK
+ (Sync)u_DataPath/u_idexreg/cw_to_ex_reg[12]/CK
+ (Sync)u_DataPath/u_idexreg/cw_to_ex_reg[11]/CK
+ (Sync)u_DataPath/u_idexreg/cw_to_ex_reg[10]/CK
+ (Sync)u_DataPath/u_idexreg/cw_to_ex_reg[9]/CK
+ (Sync)u_DataPath/u_idexreg/cw_to_ex_reg[8]/CK
+ (Sync)u_DataPath/u_idexreg/cw_to_ex_reg[7]/CK
+ (Sync)u_DataPath/u_idexreg/cw_to_ex_reg[6]/CK
+ (Sync)u_DataPath/u_idexreg/cw_to_ex_reg[5]/CK
+ (Sync)u_DataPath/u_idexreg/cw_to_ex_reg[4]/CK
+ (Sync)u_DataPath/u_idexreg/cw_to_ex_reg[3]/CK
+ (Sync)u_DataPath/u_idexreg/cw_to_ex_reg[2]/CK
+ (Sync)u_DataPath/u_idexreg/cw_to_ex_reg[1]/CK
+ (Sync)u_DataPath/u_idexreg/cw_to_ex_reg[0]/CK
+ (Sync)u_DataPath/u_idexreg/immediate_reg[15]/CK
+ (Sync)u_DataPath/u_idexreg/immediate_reg[14]/CK
+ (Sync)u_DataPath/u_idexreg/immediate_reg[13]/CK
+ (Sync)u_DataPath/u_idexreg/immediate_reg[12]/CK
+ (Sync)u_DataPath/u_idexreg/immediate_reg[11]/CK
+ (Sync)u_DataPath/u_idexreg/immediate_reg[10]/CK
+ (Sync)u_DataPath/u_idexreg/immediate_reg[9]/CK
+ (Sync)u_DataPath/u_idexreg/immediate_reg[8]/CK
+ (Sync)u_DataPath/u_idexreg/immediate_reg[7]/CK
+ (Sync)u_DataPath/u_idexreg/immediate_reg[6]/CK
+ (Sync)u_DataPath/u_idexreg/immediate_reg[5]/CK
+ (Sync)u_DataPath/u_idexreg/immediate_reg[4]/CK
+ (Sync)u_DataPath/u_idexreg/immediate_reg[3]/CK
+ (Sync)u_DataPath/u_idexreg/immediate_reg[2]/CK
+ (Sync)u_DataPath/u_idexreg/immediate_reg[1]/CK
+ (Sync)u_DataPath/u_idexreg/immediate_reg[0]/CK
+ (Sync)u_DataPath/u_idexreg/rt_reg[4]/CK
+ (Sync)u_DataPath/u_idexreg/rt_reg[3]/CK
+ (Sync)u_DataPath/u_idexreg/rt_reg[2]/CK
+ (Sync)u_DataPath/u_idexreg/rt_reg[1]/CK
+ (Sync)u_DataPath/u_idexreg/rt_reg[0]/CK
+ (Sync)u_DataPath/u_exmemreg/regfile_addr_out_reg[4]/CK
+ (Sync)u_DataPath/u_exmemreg/regfile_addr_out_reg[3]/CK
+ (Sync)u_DataPath/u_exmemreg/regfile_addr_out_reg[2]/CK
+ (Sync)u_DataPath/u_exmemreg/regfile_addr_out_reg[1]/CK
+ (Sync)u_DataPath/u_exmemreg/regfile_addr_out_reg[0]/CK
+ (Sync)u_DataPath/u_exmemreg/controls_out_reg[10]/CK
+ (Sync)u_DataPath/u_exmemreg/controls_out_reg[9]/CK
+ (Sync)u_DataPath/u_exmemreg/controls_out_reg[8]/CK
+ (Sync)u_DataPath/u_exmemreg/controls_out_reg[7]/CK
+ (Sync)u_DataPath/u_exmemreg/controls_out_reg[6]/CK
+ (Sync)u_DataPath/u_exmemreg/controls_out_reg[5]/CK
+ (Sync)u_DataPath/u_exmemreg/controls_out_reg[4]/CK
+ (Sync)u_DataPath/u_exmemreg/controls_out_reg[3]/CK
+ (Sync)u_DataPath/u_exmemreg/controls_out_reg[2]/CK
+ (Sync)u_DataPath/u_exmemreg/controls_out_reg[1]/CK
+ (Sync)u_DataPath/u_exmemreg/controls_out_reg[0]/CK
+ (Sync)u_DataPath/u_exmemreg/toPC1_out_reg[31]/CK
+ (Sync)u_DataPath/u_exmemreg/toPC1_out_reg[30]/CK
+ (Sync)u_DataPath/u_exmemreg/toPC1_out_reg[29]/CK
+ (Sync)u_DataPath/u_exmemreg/toPC1_out_reg[28]/CK
+ (Sync)u_DataPath/u_exmemreg/toPC1_out_reg[27]/CK
+ (Sync)u_DataPath/u_exmemreg/toPC1_out_reg[26]/CK
+ (Sync)u_DataPath/u_exmemreg/toPC1_out_reg[25]/CK
+ (Sync)u_DataPath/u_exmemreg/toPC1_out_reg[24]/CK
+ (Sync)u_DataPath/u_exmemreg/toPC1_out_reg[23]/CK
+ (Sync)u_DataPath/u_exmemreg/toPC1_out_reg[22]/CK
+ (Sync)u_DataPath/u_exmemreg/toPC1_out_reg[21]/CK
+ (Sync)u_DataPath/u_exmemreg/toPC1_out_reg[20]/CK
+ (Sync)u_DataPath/u_exmemreg/toPC1_out_reg[19]/CK
+ (Sync)u_DataPath/u_exmemreg/toPC1_out_reg[18]/CK
+ (Sync)u_DataPath/u_exmemreg/toPC1_out_reg[17]/CK
+ (Sync)u_DataPath/u_exmemreg/toPC1_out_reg[16]/CK
+ (Sync)u_DataPath/u_exmemreg/toPC1_out_reg[15]/CK
+ (Sync)u_DataPath/u_exmemreg/toPC1_out_reg[14]/CK
+ (Sync)u_DataPath/u_exmemreg/toPC1_out_reg[13]/CK
+ (Sync)u_DataPath/u_exmemreg/toPC1_out_reg[12]/CK
+ (Sync)u_DataPath/u_exmemreg/toPC1_out_reg[11]/CK
+ (Sync)u_DataPath/u_exmemreg/toPC1_out_reg[10]/CK
+ (Sync)u_DataPath/u_exmemreg/toPC1_out_reg[9]/CK
+ (Sync)u_DataPath/u_exmemreg/toPC1_out_reg[8]/CK
+ (Sync)u_DataPath/u_exmemreg/toPC1_out_reg[7]/CK
+ (Sync)u_DataPath/u_exmemreg/toPC1_out_reg[6]/CK
+ (Sync)u_DataPath/u_exmemreg/toPC1_out_reg[5]/CK
+ (Sync)u_DataPath/u_exmemreg/toPC1_out_reg[4]/CK
+ (Sync)u_DataPath/u_exmemreg/toPC1_out_reg[3]/CK
+ (Sync)u_DataPath/u_exmemreg/toPC1_out_reg[2]/CK
+ (Sync)u_DataPath/u_exmemreg/toPC1_out_reg[1]/CK
+ (Sync)u_DataPath/u_exmemreg/toPC1_out_reg[0]/CK
+ (Sync)u_DataPath/u_exmemreg/toPC2_out_reg[31]/CK
+ (Sync)u_DataPath/u_exmemreg/toPC2_out_reg[30]/CK
+ (Sync)u_DataPath/u_exmemreg/toPC2_out_reg[29]/CK
+ (Sync)u_DataPath/u_exmemreg/toPC2_out_reg[28]/CK
+ (Sync)u_DataPath/u_exmemreg/toPC2_out_reg[27]/CK
+ (Sync)u_DataPath/u_exmemreg/toPC2_out_reg[26]/CK
+ (Sync)u_DataPath/u_exmemreg/toPC2_out_reg[25]/CK
+ (Sync)u_DataPath/u_exmemreg/toPC2_out_reg[24]/CK
+ (Sync)u_DataPath/u_exmemreg/toPC2_out_reg[23]/CK
+ (Sync)u_DataPath/u_exmemreg/toPC2_out_reg[22]/CK
+ (Sync)u_DataPath/u_exmemreg/toPC2_out_reg[21]/CK
+ (Sync)u_DataPath/u_exmemreg/toPC2_out_reg[20]/CK
+ (Sync)u_DataPath/u_exmemreg/toPC2_out_reg[19]/CK
+ (Sync)u_DataPath/u_exmemreg/toPC2_out_reg[18]/CK
+ (Sync)u_DataPath/u_exmemreg/toPC2_out_reg[17]/CK
+ (Sync)u_DataPath/u_exmemreg/toPC2_out_reg[16]/CK
+ (Sync)u_DataPath/u_exmemreg/toPC2_out_reg[15]/CK
+ (Sync)u_DataPath/u_exmemreg/toPC2_out_reg[14]/CK
+ (Sync)u_DataPath/u_exmemreg/toPC2_out_reg[13]/CK
+ (Sync)u_DataPath/u_exmemreg/toPC2_out_reg[12]/CK
+ (Sync)u_DataPath/u_exmemreg/toPC2_out_reg[11]/CK
+ (Sync)u_DataPath/u_exmemreg/toPC2_out_reg[10]/CK
+ (Sync)u_DataPath/u_exmemreg/toPC2_out_reg[9]/CK
+ (Sync)u_DataPath/u_exmemreg/toPC2_out_reg[8]/CK
+ (Sync)u_DataPath/u_exmemreg/toPC2_out_reg[7]/CK
+ (Sync)u_DataPath/u_exmemreg/toPC2_out_reg[6]/CK
+ (Sync)u_DataPath/u_exmemreg/toPC2_out_reg[5]/CK
+ (Sync)u_DataPath/u_exmemreg/toPC2_out_reg[4]/CK
+ (Sync)u_DataPath/u_exmemreg/toPC2_out_reg[3]/CK
+ (Sync)u_DataPath/u_exmemreg/toPC2_out_reg[2]/CK
+ (Sync)u_DataPath/u_exmemreg/toPC2_out_reg[1]/CK
+ (Sync)u_DataPath/u_exmemreg/toPC2_out_reg[0]/CK
+ (Sync)u_DataPath/u_exmemreg/takeBranch_out_reg/CK
+ (Sync)u_DataPath/u_exmemreg/mem_addr_out_reg[31]/CK
+ (Sync)u_DataPath/u_exmemreg/mem_addr_out_reg[30]/CK
+ (Sync)u_DataPath/u_exmemreg/mem_addr_out_reg[29]/CK
+ (Sync)u_DataPath/u_exmemreg/mem_addr_out_reg[28]/CK
+ (Sync)u_DataPath/u_exmemreg/mem_addr_out_reg[27]/CK
+ (Sync)u_DataPath/u_exmemreg/mem_addr_out_reg[26]/CK
+ (Sync)u_DataPath/u_exmemreg/mem_addr_out_reg[25]/CK
+ (Sync)u_DataPath/u_exmemreg/mem_addr_out_reg[24]/CK
+ (Sync)u_DataPath/u_exmemreg/mem_addr_out_reg[23]/CK
+ (Sync)u_DataPath/u_exmemreg/mem_addr_out_reg[22]/CK
+ (Sync)u_DataPath/u_exmemreg/mem_addr_out_reg[21]/CK
+ (Sync)u_DataPath/u_exmemreg/mem_addr_out_reg[20]/CK
+ (Sync)u_DataPath/u_exmemreg/mem_addr_out_reg[19]/CK
+ (Sync)u_DataPath/u_exmemreg/mem_addr_out_reg[18]/CK
+ (Sync)u_DataPath/u_exmemreg/mem_addr_out_reg[17]/CK
+ (Sync)u_DataPath/u_exmemreg/mem_addr_out_reg[16]/CK
+ (Sync)u_DataPath/u_exmemreg/mem_addr_out_reg[15]/CK
+ (Sync)u_DataPath/u_exmemreg/mem_addr_out_reg[14]/CK
+ (Sync)u_DataPath/u_exmemreg/mem_addr_out_reg[13]/CK
+ (Sync)u_DataPath/u_exmemreg/mem_addr_out_reg[12]/CK
+ (Sync)u_DataPath/u_exmemreg/mem_addr_out_reg[11]/CK
+ (Sync)u_DataPath/u_exmemreg/mem_addr_out_reg[10]/CK
+ (Sync)u_DataPath/u_exmemreg/mem_addr_out_reg[9]/CK
+ (Sync)u_DataPath/u_exmemreg/mem_addr_out_reg[8]/CK
+ (Sync)u_DataPath/u_exmemreg/mem_addr_out_reg[7]/CK
+ (Sync)u_DataPath/u_exmemreg/mem_addr_out_reg[6]/CK
+ (Sync)u_DataPath/u_exmemreg/mem_addr_out_reg[5]/CK
+ (Sync)u_DataPath/u_exmemreg/mem_addr_out_reg[4]/CK
+ (Sync)u_DataPath/u_exmemreg/mem_addr_out_reg[3]/CK
+ (Sync)u_DataPath/u_exmemreg/mem_addr_out_reg[2]/CK
+ (Sync)u_DataPath/u_exmemreg/mem_addr_out_reg[1]/CK
+ (Sync)u_DataPath/u_exmemreg/mem_addr_out_reg[0]/CK
+ (Sync)u_DataPath/u_exmemreg/mem_writedata_out_reg[31]/CK
+ (Sync)u_DataPath/u_exmemreg/mem_writedata_out_reg[30]/CK
+ (Sync)u_DataPath/u_exmemreg/mem_writedata_out_reg[29]/CK
+ (Sync)u_DataPath/u_exmemreg/mem_writedata_out_reg[28]/CK
+ (Sync)u_DataPath/u_exmemreg/mem_writedata_out_reg[27]/CK
+ (Sync)u_DataPath/u_exmemreg/mem_writedata_out_reg[26]/CK
+ (Sync)u_DataPath/u_exmemreg/mem_writedata_out_reg[25]/CK
+ (Sync)u_DataPath/u_exmemreg/mem_writedata_out_reg[24]/CK
+ (Sync)u_DataPath/u_exmemreg/mem_writedata_out_reg[23]/CK
+ (Sync)u_DataPath/u_exmemreg/mem_writedata_out_reg[22]/CK
+ (Sync)u_DataPath/u_exmemreg/mem_writedata_out_reg[21]/CK
+ (Sync)u_DataPath/u_exmemreg/mem_writedata_out_reg[20]/CK
+ (Sync)u_DataPath/u_exmemreg/mem_writedata_out_reg[19]/CK
+ (Sync)u_DataPath/u_exmemreg/mem_writedata_out_reg[18]/CK
+ (Sync)u_DataPath/u_exmemreg/mem_writedata_out_reg[17]/CK
+ (Sync)u_DataPath/u_exmemreg/mem_writedata_out_reg[16]/CK
+ (Sync)u_DataPath/u_exmemreg/mem_writedata_out_reg[15]/CK
+ (Sync)u_DataPath/u_exmemreg/mem_writedata_out_reg[14]/CK
+ (Sync)u_DataPath/u_exmemreg/mem_writedata_out_reg[13]/CK
+ (Sync)u_DataPath/u_exmemreg/mem_writedata_out_reg[12]/CK
+ (Sync)u_DataPath/u_exmemreg/mem_writedata_out_reg[11]/CK
+ (Sync)u_DataPath/u_exmemreg/mem_writedata_out_reg[10]/CK
+ (Sync)u_DataPath/u_exmemreg/mem_writedata_out_reg[9]/CK
+ (Sync)u_DataPath/u_exmemreg/mem_writedata_out_reg[8]/CK
+ (Sync)u_DataPath/u_exmemreg/mem_writedata_out_reg[7]/CK
+ (Sync)u_DataPath/u_exmemreg/mem_writedata_out_reg[6]/CK
+ (Sync)u_DataPath/u_exmemreg/mem_writedata_out_reg[5]/CK
+ (Sync)u_DataPath/u_exmemreg/mem_writedata_out_reg[4]/CK
+ (Sync)u_DataPath/u_exmemreg/mem_writedata_out_reg[3]/CK
+ (Sync)u_DataPath/u_exmemreg/mem_writedata_out_reg[2]/CK
+ (Sync)u_DataPath/u_exmemreg/mem_writedata_out_reg[1]/CK
+ (Sync)u_DataPath/u_exmemreg/mem_writedata_out_reg[0]/CK
+ (Sync)u_DataPath/u_memwbreg/controls_out_reg[2]/CK

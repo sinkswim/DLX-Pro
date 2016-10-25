@@ -1,5 +1,7 @@
 # DLX-Pro
+![Alt text](./mdimgs/phys.png?raw=true "Example")
 Co-designed by [Floridia](https://github.com/florix) and [Margelli](https://github.com/sinkswim).
+
 
 ## Summary
 This project consist in the design and implementation of an advanced DLX processor. The design is based on the conceptual processor originally proposed by D. Patterson and J. Hennessy.
@@ -39,7 +41,6 @@ There are 32 general purpose 32-bit integer registers, organized into a register
 Instructions have a fixed length of categories (table 1.1).
 32 bits and a specific format. They are divided into three main
 
-![Alt text](./mdimgs/.png?raw=true "Example")
 ![Alt text](./mdimgs/tab1.png?raw=true "Example")
 
 ### Notes

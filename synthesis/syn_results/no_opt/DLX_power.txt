@@ -1,0 +1,114 @@
+Loading db file '/home/robert_m/sods/WORK_SYNTHESIS/tech/STcmos65/CORE65LPLVT_nom_1.00V_25C.db'
+Loading db file '/home/robert_m/sods/WORK_SYNTHESIS/tech/STcmos65/CORE65LPHVT_nom_1.00V_25C.db'
+Information: Propagating switching activity (low effort zero delay simulation). (PWR-6)
+Warning: Design has unannotated primary inputs. (PWR-414)
+Warning: Design has unannotated sequential cell outputs. (PWR-415)
+ 
+****************************************
+Report : power
+        -analysis_effort low
+Design : DLX
+Version: J-2014.09-SP2
+Date   : Tue Sep 13 11:11:21 2016
+****************************************
+
+
+Library(s) Used:
+
+    CORE65LPLVT (File: /home/robert_m/sods/WORK_SYNTHESIS/tech/STcmos65/CORE65LPLVT_nom_1.00V_25C.db)
+    CORE65LPHVT (File: /home/robert_m/sods/WORK_SYNTHESIS/tech/STcmos65/CORE65LPHVT_nom_1.00V_25C.db)
+
+
+Operating Conditions: nom_1.00V_25C   Library: CORE65LPLVT
+Wire Load Model Mode: enclosed
+
+Design        Wire Load Model            Library
+------------------------------------------------
+DLX                    area_12Kto18K     CORE65LPLVT
+cu                     area_12Kto18K     CORE65LPLVT
+DataPath               area_12Kto18K     CORE65LPLVT
+fetch                  area_12Kto18K     CORE65LPLVT
+ifid_reg               area_12Kto18K     CORE65LPLVT
+decode_unit            area_12Kto18K     CORE65LPLVT
+idex_reg               area_12Kto18K     CORE65LPLVT
+execute                area_12Kto18K     CORE65LPLVT
+EX_MEM_Reg             area_12Kto18K     CORE65LPLVT
+memory                 area_12Kto18K     CORE65LPLVT
+MEM_WB_Reg             area_12Kto18K     CORE65LPLVT
+writeback              area_12Kto18K     CORE65LPLVT
+mux_branch             area_12Kto18K     CORE65LPLVT
+mux_jump               area_12Kto18K     CORE65LPLVT
+pc                     area_12Kto18K     CORE65LPLVT
+increment_pc           area_12Kto18K     CORE65LPLVT
+iram_block             area_12Kto18K     CORE65LPLVT
+hdu                    area_12Kto18K     CORE65LPLVT
+mux_stall              area_12Kto18K     CORE65LPLVT
+sign_extender          area_12Kto18K     CORE65LPLVT
+extender               area_12Kto18K     CORE65LPLVT
+reg_file               area_12Kto18K     CORE65LPLVT
+adder_0                area_12Kto18K     CORE65LPLVT
+mux21_NBIT32_0         area_12Kto18K     CORE65LPLVT
+mux21_NBIT5_0          area_12Kto18K     CORE65LPLVT
+mux41_NBIT32_0         area_12Kto18K     CORE65LPLVT
+concat16               area_12Kto18K     CORE65LPLVT
+forward                area_12Kto18K     CORE65LPLVT
+branch_circ            area_12Kto18K     CORE65LPLVT
+PSWreg                 area_12Kto18K     CORE65LPLVT
+ALU                    area_12Kto18K     CORE65LPLVT
+dram_block             area_12Kto18K     CORE65LPLVT
+mmu_in_iram            area_12Kto18K     CORE65LPLVT
+mmu_out_iram           area_12Kto18K     CORE65LPLVT
+mmu_in_dram            area_12Kto18K     CORE65LPLVT
+mmu_out_dram           area_12Kto18K     CORE65LPLVT
+adder_1                area_12Kto18K     CORE65LPLVT
+adder_2                area_12Kto18K     CORE65LPLVT
+mux21_NBIT32_1         area_12Kto18K     CORE65LPLVT
+mux21_NBIT32_2         area_12Kto18K     CORE65LPLVT
+mux21_NBIT32_3         area_12Kto18K     CORE65LPLVT
+mux21_NBIT32_4         area_12Kto18K     CORE65LPLVT
+mux21_NBIT32_5         area_12Kto18K     CORE65LPLVT
+mux21_NBIT5_1          area_12Kto18K     CORE65LPLVT
+mux41_NBIT32_1         area_12Kto18K     CORE65LPLVT
+adder_1_DW01_add_0     area_0Kto1K       CORE65LPLVT
+adder_2_DW01_add_0     area_0Kto1K       CORE65LPLVT
+adder_0_DW01_add_0     area_0Kto1K       CORE65LPLVT
+increment_pc_DW01_add_0
+                       area_0Kto1K       CORE65LPLVT
+ALU_DW01_cmp6_2        area_0Kto1K       CORE65LPLVT
+ALU_DW01_cmp6_3        area_0Kto1K       CORE65LPLVT
+ALU_DW01_sub_2         area_0Kto1K       CORE65LPLVT
+ALU_DW01_sub_3         area_0Kto1K       CORE65LPLVT
+ALU_DW01_add_2         area_0Kto1K       CORE65LPLVT
+ALU_DW01_add_3         area_0Kto1K       CORE65LPLVT
+
+
+Global Operating Voltage = 1    
+Power-specific unit information :
+    Voltage Units = 1V
+    Capacitance Units = 1.000000pf
+    Time Units = 1ns
+    Dynamic Power Units = 1mW    (derived from V,C,T units)
+    Leakage Power Units = 1mW
+
+
+  Cell Internal Power  =   1.5786 mW   (81%)
+  Net Switching Power  = 372.1211 uW   (19%)
+                         ---------
+Total Dynamic Power    =   1.9507 mW  (100%)
+
+Cell Leakage Power     =  13.2726 uW
+
+
+                 Internal         Switching           Leakage            Total
+Power Group      Power            Power               Power              Power   (   %    )  Attrs
+--------------------------------------------------------------------------------------------------
+io_pad             0.0000            0.0000            0.0000            0.0000  (   0.00%)
+memory             0.0000            0.0000            0.0000            0.0000  (   0.00%)
+black_box          0.0000            0.0000            0.0000            0.0000  (   0.00%)
+clock_network      0.0000            0.0000            0.0000            0.0000  (   0.00%)
+register           1.2226        4.5742e-02        2.3629e-03            1.2707  (  64.70%)
+sequential     8.1820e-02        6.9977e-04        3.3226e-05        8.2553e-02  (   4.20%)
+combinational      0.2742            0.3257        1.0876e-02            0.6108  (  31.10%)
+--------------------------------------------------------------------------------------------------
+Total              1.5786 mW         0.3721 mW     1.3273e-02 mW         1.9640 mW
+1

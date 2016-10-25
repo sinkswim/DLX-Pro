@@ -1,0 +1,72 @@
+Information: Updating design information... (UID-85)
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 1
+Design : DLX
+Version: J-2014.09-SP2
+Date   : Tue Sep 13 12:06:41 2016
+****************************************
+
+Operating Conditions: nom_1.00V_25C   Library: CORE65LPLVT
+Wire Load Model Mode: enclosed
+
+  Startpoint: clk_r_REG450_S1
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: clk_r_REG1_S1
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  DLX                area_12Kto18K         CORE65LPLVT
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  clk_r_REG450_S1/CP (HS65_LL_DFPQNX9)                    0.00       0.00 r
+  clk_r_REG450_S1/QN (HS65_LL_DFPQNX9)                    0.24       0.24 r
+  U7534/Z (HS65_LL_CNBFX17)                               0.18       0.42 r
+  U8989/Z (HS65_LH_MUXI21X2)                              0.27       0.69 r
+  U5892/Z (HS65_LH_NOR2X6)                                0.21       0.89 f
+  U3982/Z (HS65_LH_IVX2)                                  0.10       0.99 r
+  U4815/Z (HS65_LL_NAND2X2)                               0.07       1.07 f
+  U6697/Z (HS65_LL_OAI12X6)                               0.13       1.19 r
+  U5588/Z (HS65_LH_NOR2X6)                                0.16       1.35 f
+  U3713/Z (HS65_LH_OAI12X3)                               0.21       1.56 r
+  U4096/Z (HS65_LH_AOI21X4)                               0.19       1.74 f
+  U4550/Z (HS65_LL_OAI12X3)                               0.09       1.83 r
+  U3935/Z (HS65_LL_AOI12X6)                               0.06       1.89 f
+  U3557/Z (HS65_LL_CNBFX21)                               0.07       1.97 f
+  U7146/Z (HS65_LL_OAI12X3)                               0.06       2.03 r
+  U6287/Z (HS65_LHS_XNOR2X6)                              0.18       2.21 f
+  U5189/Z (HS65_LH_NAND2X7)                               0.07       2.28 r
+  U5175/Z (HS65_LL_NAND2X2)                               0.05       2.33 f
+  U6267/Z (HS65_LL_NAND2AX4)                              0.08       2.42 f
+  U5163/Z (HS65_LL_IVX2)                                  0.05       2.47 r
+  U7644/Z (HS65_LL_NAND3X6)                               0.04       2.51 f
+  U5914/Z (HS65_LL_NAND4ABX6)                             0.10       2.61 f
+  U7580/Z (HS65_LL_NOR2X9)                                0.05       2.66 r
+  U3673/Z (HS65_LL_CBI4I1X5)                              0.05       2.71 f
+  U6259/Z (HS65_LL_AOI21X2)                               0.06       2.77 r
+  clk_r_REG1_S1/D (HS65_LL_DFPQNX27)                      0.00       2.77 r
+  data arrival time                                                  2.77
+
+  clock clk (rise edge)                                   3.00       3.00
+  clock network delay (ideal)                             0.00       3.00
+  clock uncertainty                                      -0.15       2.85
+  clk_r_REG1_S1/CP (HS65_LL_DFPQNX27)                     0.00       2.85 r
+  library setup time                                     -0.08       2.77
+  data required time                                                 2.77
+  --------------------------------------------------------------------------
+  data required time                                                 2.77
+  data arrival time                                                 -2.77
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.00
+
+
+1

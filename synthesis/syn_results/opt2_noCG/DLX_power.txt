@@ -1,0 +1,54 @@
+ 
+****************************************
+Report : power
+        -analysis_effort low
+Design : DLX
+Version: J-2014.09-SP2
+Date   : Tue Sep 13 12:06:42 2016
+****************************************
+
+
+Library(s) Used:
+
+    CORE65LPLVT (File: /home/robert_m/sods/WORK_SYNTHESIS/tech/STcmos65/CORE65LPLVT_nom_1.00V_25C.db)
+    CORE65LPHVT (File: /home/robert_m/sods/WORK_SYNTHESIS/tech/STcmos65/CORE65LPHVT_nom_1.00V_25C.db)
+
+
+Operating Conditions: nom_1.00V_25C   Library: CORE65LPLVT
+Wire Load Model Mode: enclosed
+
+Design        Wire Load Model            Library
+------------------------------------------------
+DLX                    area_12Kto18K     CORE65LPLVT
+
+
+Global Operating Voltage = 1    
+Power-specific unit information :
+    Voltage Units = 1V
+    Capacitance Units = 1.000000pf
+    Time Units = 1ns
+    Dynamic Power Units = 1mW    (derived from V,C,T units)
+    Leakage Power Units = 1mW
+
+
+  Cell Internal Power  =   1.7985 mW   (86%)
+  Net Switching Power  = 293.0401 uW   (14%)
+                         ---------
+Total Dynamic Power    =   2.0916 mW  (100%)
+
+Cell Leakage Power     =   3.4396 uW
+
+
+                 Internal         Switching           Leakage            Total
+Power Group      Power            Power               Power              Power   (   %    )  Attrs
+--------------------------------------------------------------------------------------------------
+io_pad             0.0000            0.0000            0.0000            0.0000  (   0.00%)
+memory             0.0000            0.0000            0.0000            0.0000  (   0.00%)
+black_box          0.0000            0.0000            0.0000            0.0000  (   0.00%)
+clock_network      0.0000            0.0000            0.0000            0.0000  (   0.00%)
+register           1.6115        3.2462e-02        1.7185e-03            1.6456  (  78.55%)
+sequential     8.5827e-02        6.7270e-04        3.3165e-05        8.6532e-02  (   4.13%)
+combinational      0.1013            0.2599        1.6879e-03            0.3628  (  17.32%)
+--------------------------------------------------------------------------------------------------
+Total              1.7985 mW         0.2930 mW     3.4396e-03 mW         2.0950 mW
+1

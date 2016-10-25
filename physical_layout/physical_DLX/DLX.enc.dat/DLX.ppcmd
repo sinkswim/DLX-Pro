@@ -1,0 +1,62 @@
+# PPCMD 1 
+# sroute -connect { blockPin padPin padRing corePin floatingStripe } -layerChangeRange { metal1 metal10 } -blockPinTarget { nearestRingStripe nearestTarget } -padPinPortConnect { allPort oneGeom } -stripeSCpinTarget { blockring padring ring stripe ringpin blockpin } -checkAlignedSecondaryPin 1 -blockPin useLef -allowJogging 1 -crossoverViaBottomLayer metal1 -allowLayerChange 1 -targetViaTopLayer metal10 -crossoverViaTopLayer metal10 -targetViaBottomLayer metal1 -nets { gnd vdd }
+# 3 
+# 16 
+# 0 
+# 0 
+# 0 
+# 0 
+# BOX_LIST 
+# END_BOX_LIST 
+# NET_INFO_LIST 
+# END_NET_INFO_LIST 
+# END_PPCMD 1 
+
+# PPCMD 2 
+# addStripe -block_ring_top_layer_limit metal10 -max_same_layer_jog_length 1.6 -padcore_ring_bottom_layer_limit metal9 -set_to_set_distance 20 -stacked_via_top_layer metal10 -padcore_ring_top_layer_limit metal10 -spacing 0.8 -xleft_offset 15 -merge_stripes_value 0.095 -layer metal10 -block_ring_bottom_layer_limit metal9 -width 0.8 -nets {gnd vdd} -stacked_via_bottom_layer metal1
+# 2 
+# 2 
+# 1 
+# 0 
+# 0 
+# 2 
+# BOX_LIST 
+# 3370 3130 266730 257910 0 
+# 6570 6330 263530 254710 0 
+# END_BOX_LIST 
+# NET_INFO_LIST 
+# vdd 1600 10 0 41560 263640 40000 0 0 
+# gnd 1600 10 0 38360 263640 40000 0 0 
+# END_NET_INFO_LIST 
+# END_PPCMD 2 
+
+# PPCMD 3 
+# addRing -spacing_bottom 0.8 -width_left 0.8 -width_bottom 0.8 -width_top 0.8 -spacing_top 0.8 -layer_bottom metal9 -stacked_via_top_layer metal10 -width_right 0.8 -around core -jog_distance 0.095 -offset_bottom 0.095 -layer_top metal9 -threshold 0.095 -offset_left 0.095 -spacing_right 0.8 -spacing_left 0.8 -offset_right 0.095 -offset_top 0.095 -layer_right metal10 -nets {gnd vdd} -stacked_via_bottom_layer metal1 -layer_left metal10
+# 1 
+# 32 
+# 1 
+# 0 
+# 0 
+# 0 
+# BOX_LIST 
+# END_BOX_LIST 
+# NET_INFO_LIST 
+# vdd 1600 9 1 0 0 0 0 0 
+# RING_PT_INFO_LIST 
+# 135850 3930 135850 258710 
+# END_RING_PT_INFO_LIST 
+# vdd 1600 10 1 0 0 0 0 0 
+# RING_PT_INFO_LIST 
+# 4170 131320 267530 131320 
+# END_RING_PT_INFO_LIST 
+# gnd 1600 9 1 0 0 0 0 0 
+# RING_PT_INFO_LIST 
+# 135850 7130 135850 255510 
+# END_RING_PT_INFO_LIST 
+# gnd 1600 10 1 0 0 0 0 0 
+# RING_PT_INFO_LIST 
+# 7370 131320 264330 131320 
+# END_RING_PT_INFO_LIST 
+# END_NET_INFO_LIST 
+# END_PPCMD 3 
+

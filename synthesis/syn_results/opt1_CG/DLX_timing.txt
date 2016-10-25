@@ -1,0 +1,64 @@
+Information: Updating design information... (UID-85)
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 1
+Design : DLX
+Version: J-2014.09-SP2
+Date   : Tue Sep 13 11:36:53 2016
+****************************************
+
+Operating Conditions: nom_1.00V_25C   Library: CORE65LPLVT
+Wire Load Model Mode: enclosed
+
+  Startpoint: rst (input port clocked by clk)
+  Endpoint: clk_r_REG112_S4
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  DLX                area_12Kto18K         CORE65LPLVT
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  input external delay                     0.30       0.30 f
+  rst (in)                                 0.00       0.30 f
+  U4614/Z (HS65_LH_NOR3X3)                 0.09       0.39 r
+  U7436/Z (HS65_LH_BFX9)                   0.19       0.58 r
+  U7404/Z (HS65_LH_BFX9)                   0.23       0.81 r
+  U9806/Z (HS65_LH_AO222X4)                0.38       1.20 r
+  U6024/Z (HS65_LH_NAND2X7)                0.15       1.35 f
+  U5976/Z (HS65_LH_NOR2X6)                 0.14       1.49 r
+  U3665/Z (HS65_LH_NAND2X2)                0.21       1.70 f
+  U5903/Z (HS65_LH_NOR2X6)                 0.19       1.89 r
+  U5893/Z (HS65_LH_NAND2X7)                0.13       2.03 f
+  U5853/Z (HS65_LH_NOR2X6)                 0.15       2.17 r
+  U6725/Z (HS65_LL_NAND2X4)                0.09       2.27 f
+  U5806/Z (HS65_LH_NOR2X6)                 0.14       2.41 r
+  U6678/Z (HS65_LL_NAND2X4)                0.10       2.51 f
+  U4940/Z (HS65_LL_NOR2X3)                 0.10       2.62 r
+  U5595/Z (HS65_LH_AND2X4)                 0.21       2.83 r
+  U7222/Z (HS65_LLS_XOR2X3)                0.10       2.93 f
+  clk_r_REG112_S4/D (HS65_LL_DFPQX35)      0.00       2.93 f
+  data arrival time                                   2.93
+
+  clock clk (rise edge)                    3.00       3.00
+  clock network delay (ideal)              0.00       3.00
+  clock uncertainty                       -0.15       2.85
+  clk_r_REG112_S4/CP (HS65_LL_DFPQX35)     0.00       2.85 r
+  library setup time                      -0.09       2.76
+  data required time                                  2.76
+  -----------------------------------------------------------
+  data required time                                  2.76
+  data arrival time                                  -2.93
+  -----------------------------------------------------------
+  slack (VIOLATED)                                   -0.17
+
+
+1

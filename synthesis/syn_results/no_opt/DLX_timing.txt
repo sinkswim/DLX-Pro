@@ -1,0 +1,209 @@
+Information: Updating design information... (UID-85)
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 1
+Design : DLX
+Version: J-2014.09-SP2
+Date   : Tue Sep 13 11:11:15 2016
+****************************************
+
+Operating Conditions: nom_1.00V_25C   Library: CORE65LPLVT
+Wire Load Model Mode: enclosed
+
+  Startpoint: u_DataPath/u_memwbreg/controls_out_reg[1]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: u_DataPath/u_exmemreg/takeBranch_out_reg
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  DLX                area_12Kto18K         CORE65LPLVT
+  MEM_WB_Reg         area_12Kto18K         CORE65LPLVT
+  DataPath           area_12Kto18K         CORE65LPLVT
+  forward            area_12Kto18K         CORE65LPLVT
+  execute            area_12Kto18K         CORE65LPLVT
+  mux41_NBIT32_1     area_12Kto18K         CORE65LPLVT
+  ALU_DW01_add_2     area_0Kto1K           CORE65LPLVT
+  ALU                area_12Kto18K         CORE65LPLVT
+  branch_circ        area_12Kto18K         CORE65LPLVT
+  EX_MEM_Reg         area_12Kto18K         CORE65LPLVT
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  u_DataPath/u_memwbreg/controls_out_reg[1]/CP (HS65_LL_DFPQX9)
+                                                          0.00       0.00 r
+  u_DataPath/u_memwbreg/controls_out_reg[1]/Q (HS65_LL_DFPQX9)
+                                                          0.11       0.11 f
+  u_DataPath/u_memwbreg/U4/Z (HS65_LL_CNIVX14)            0.03       0.13 r
+  u_DataPath/u_memwbreg/U3/Z (HS65_LL_CNIVX21)            0.03       0.16 f
+  u_DataPath/u_memwbreg/controls_out[1] (MEM_WB_Reg)      0.00       0.16 f
+  u_DataPath/u_writeback/link (writeback)                 0.00       0.16 f
+  u_DataPath/u_writeback/link_mux21/S (mux21_NBIT5_1)     0.00       0.16 f
+  u_DataPath/u_writeback/link_mux21/U4/Z (HS65_LL_MUX21X9)
+                                                          0.09       0.26 f
+  u_DataPath/u_writeback/link_mux21/Y[3] (mux21_NBIT5_1)
+                                                          0.00       0.26 f
+  u_DataPath/u_writeback/regfile_addr_out[3] (writeback)
+                                                          0.00       0.26 f
+  u_DataPath/u_execute/RFaddr_WB[3] (execute)             0.00       0.26 f
+  u_DataPath/u_execute/forwarding_unit/rd_addr_MEMWB[3] (forward)
+                                                          0.00       0.26 f
+  u_DataPath/u_execute/forwarding_unit/U7/Z (HS65_LL_IVX18)
+                                                          0.03       0.29 r
+  u_DataPath/u_execute/forwarding_unit/U2/Z (HS65_LLS_XOR2X6)
+                                                          0.07       0.36 r
+  u_DataPath/u_execute/forwarding_unit/U28/Z (HS65_LL_AND4X13)
+                                                          0.07       0.43 r
+  u_DataPath/u_execute/forwarding_unit/U13/Z (HS65_LL_AND4X13)
+                                                          0.06       0.49 r
+  u_DataPath/u_execute/forwarding_unit/forwardB[0] (forward)
+                                                          0.00       0.49 r
+  u_DataPath/u_execute/oprnd2_mux41/s[0] (mux41_NBIT32_1)
+                                                          0.00       0.49 r
+  u_DataPath/u_execute/oprnd2_mux41/U9/Z (HS65_LL_AND2X4)
+                                                          0.08       0.57 r
+  u_DataPath/u_execute/oprnd2_mux41/U4/Z (HS65_LL_BFX18)
+                                                          0.07       0.64 r
+  u_DataPath/u_execute/oprnd2_mux41/U15/Z (HS65_LL_AO222X4)
+                                                          0.10       0.74 r
+  u_DataPath/u_execute/oprnd2_mux41/y[9] (mux41_NBIT32_1)
+                                                          0.00       0.74 r
+  u_DataPath/u_execute/alusrc_mux21/B[9] (mux21_NBIT32_2)
+                                                          0.00       0.74 r
+  u_DataPath/u_execute/alusrc_mux21/U8/Z (HS65_LL_MUX21X18)
+                                                          0.09       0.83 r
+  u_DataPath/u_execute/alusrc_mux21/Y[9] (mux21_NBIT32_2)
+                                                          0.00       0.83 r
+  u_DataPath/u_execute/EXALU/b[9] (ALU)                   0.00       0.83 r
+  u_DataPath/u_execute/EXALU/add_60/B[9] (ALU_DW01_add_2)
+                                                          0.00       0.83 r
+  u_DataPath/u_execute/EXALU/add_60/U115/Z (HS65_LL_NAND2X2)
+                                                          0.11       0.94 f
+  u_DataPath/u_execute/EXALU/add_60/U118/Z (HS65_LL_NAND2X5)
+                                                          0.06       1.00 r
+  u_DataPath/u_execute/EXALU/add_60/U8/Z (HS65_LL_AOI13X3)
+                                                          0.06       1.06 f
+  u_DataPath/u_execute/EXALU/add_60/U7/Z (HS65_LL_OAI12X6)
+                                                          0.06       1.13 r
+  u_DataPath/u_execute/EXALU/add_60/U187/Z (HS65_LL_AOI12X6)
+                                                          0.04       1.17 f
+  u_DataPath/u_execute/EXALU/add_60/U54/Z (HS65_LL_CBI4I1X5)
+                                                          0.05       1.22 r
+  u_DataPath/u_execute/EXALU/add_60/U49/Z (HS65_LL_CBI4I1X5)
+                                                          0.06       1.27 f
+  u_DataPath/u_execute/EXALU/add_60/U48/Z (HS65_LL_CBI4I1X5)
+                                                          0.07       1.34 r
+  u_DataPath/u_execute/EXALU/add_60/U59/Z (HS65_LL_IVX9)
+                                                          0.03       1.37 f
+  u_DataPath/u_execute/EXALU/add_60/U58/Z (HS65_LL_OAI21X6)
+                                                          0.05       1.42 r
+  u_DataPath/u_execute/EXALU/add_60/U50/Z (HS65_LL_IVX9)
+                                                          0.03       1.45 f
+  u_DataPath/u_execute/EXALU/add_60/U27/Z (HS65_LL_OAI21X12)
+                                                          0.05       1.50 r
+  u_DataPath/u_execute/EXALU/add_60/U22/Z (HS65_LL_IVX18)
+                                                          0.03       1.52 f
+  u_DataPath/u_execute/EXALU/add_60/U87/Z (HS65_LL_CNIVX27)
+                                                          0.02       1.54 r
+  u_DataPath/u_execute/EXALU/add_60/U85/Z (HS65_LL_NAND2X29)
+                                                          0.02       1.55 f
+  u_DataPath/u_execute/EXALU/add_60/U86/Z (HS65_LL_NAND2X21)
+                                                          0.02       1.58 r
+  u_DataPath/u_execute/EXALU/add_60/U88/Z (HS65_LL_IVX27)
+                                                          0.02       1.59 f
+  u_DataPath/u_execute/EXALU/add_60/U106/Z (HS65_LL_OAI12X12)
+                                                          0.04       1.63 r
+  u_DataPath/u_execute/EXALU/add_60/U98/Z (HS65_LL_IVX18)
+                                                          0.02       1.65 f
+  u_DataPath/u_execute/EXALU/add_60/U97/Z (HS65_LL_OAI12X18)
+                                                          0.03       1.68 r
+  u_DataPath/u_execute/EXALU/add_60/U79/Z (HS65_LL_NAND2X14)
+                                                          0.03       1.71 f
+  u_DataPath/u_execute/EXALU/add_60/U68/Z (HS65_LL_NAND2X7)
+                                                          0.04       1.75 r
+  u_DataPath/u_execute/EXALU/add_60/U35/Z (HS65_LL_NAND2X14)
+                                                          0.03       1.78 f
+  u_DataPath/u_execute/EXALU/add_60/U20/Z (HS65_LL_NAND2X14)
+                                                          0.03       1.80 r
+  u_DataPath/u_execute/EXALU/add_60/U39/Z (HS65_LL_IVX18)
+                                                          0.02       1.82 f
+  u_DataPath/u_execute/EXALU/add_60/U25/Z (HS65_LL_OAI21X12)
+                                                          0.04       1.86 r
+  u_DataPath/u_execute/EXALU/add_60/U120/Z (HS65_LL_IVX9)
+                                                          0.02       1.88 f
+  u_DataPath/u_execute/EXALU/add_60/U110/Z (HS65_LL_OAI12X6)
+                                                          0.05       1.93 r
+  u_DataPath/u_execute/EXALU/add_60/U119/Z (HS65_LL_IVX9)
+                                                          0.03       1.96 f
+  u_DataPath/u_execute/EXALU/add_60/U21/Z (HS65_LL_OAI12X12)
+                                                          0.04       2.00 r
+  u_DataPath/u_execute/EXALU/add_60/U6/Z (HS65_LL_IVX18)
+                                                          0.02       2.02 f
+  u_DataPath/u_execute/EXALU/add_60/U2/Z (HS65_LL_OA12X27)
+                                                          0.05       2.08 f
+  u_DataPath/u_execute/EXALU/add_60/U99/Z (HS65_LL_OAI12X12)
+                                                          0.04       2.11 r
+  u_DataPath/u_execute/EXALU/add_60/U29/Z (HS65_LL_NAND2X7)
+                                                          0.03       2.15 f
+  u_DataPath/u_execute/EXALU/add_60/U72/Z (HS65_LL_NAND2X7)
+                                                          0.04       2.19 r
+  u_DataPath/u_execute/EXALU/add_60/U4/Z (HS65_LL_NAND2X21)
+                                                          0.03       2.22 f
+  u_DataPath/u_execute/EXALU/add_60/U3/Z (HS65_LL_AND2X18)
+                                                          0.04       2.27 f
+  u_DataPath/u_execute/EXALU/add_60/U36/Z (HS65_LL_OAI21X12)
+                                                          0.04       2.31 r
+  u_DataPath/u_execute/EXALU/add_60/U78/Z (HS65_LL_IVX9)
+                                                          0.03       2.34 f
+  u_DataPath/u_execute/EXALU/add_60/U75/Z (HS65_LL_NAND2X7)
+                                                          0.02       2.36 r
+  u_DataPath/u_execute/EXALU/add_60/U76/Z (HS65_LL_NAND2X14)
+                                                          0.03       2.39 f
+  u_DataPath/u_execute/EXALU/add_60/SUM[31] (ALU_DW01_add_2)
+                                                          0.00       2.39 f
+  u_DataPath/u_execute/EXALU/U12/Z (HS65_LL_NAND2X11)     0.03       2.41 r
+  u_DataPath/u_execute/EXALU/U11/Z (HS65_LL_AND3X35)      0.06       2.48 r
+  u_DataPath/u_execute/EXALU/U42/Z (HS65_LL_NAND3X13)     0.03       2.51 f
+  u_DataPath/u_execute/EXALU/U185/Z (HS65_LL_CNIVX7)      0.02       2.53 r
+  u_DataPath/u_execute/EXALU/U88/Z (HS65_LL_NOR4ABX9)     0.07       2.60 r
+  u_DataPath/u_execute/EXALU/U71/Z (HS65_LL_AND3X18)      0.07       2.67 r
+  u_DataPath/u_execute/EXALU/zero (ALU)                   0.00       2.67 r
+  u_DataPath/u_execute/branch_circuit/zero (branch_circ)
+                                                          0.00       2.67 r
+  u_DataPath/u_execute/branch_circuit/U1/Z (HS65_LL_IVX9)
+                                                          0.02       2.69 f
+  u_DataPath/u_execute/branch_circuit/U3/Z (HS65_LL_NAND2X14)
+                                                          0.02       2.71 r
+  u_DataPath/u_execute/branch_circuit/U4/Z (HS65_LL_NAND2X14)
+                                                          0.02       2.72 f
+  u_DataPath/u_execute/branch_circuit/branch_taken (branch_circ)
+                                                          0.00       2.72 f
+  u_DataPath/u_execute/branchTaken (execute)              0.00       2.72 f
+  u_DataPath/u_exmemreg/takeBranch_in (EX_MEM_Reg)        0.00       2.72 f
+  u_DataPath/u_exmemreg/U5/Z (HS65_LL_AND2X9)             0.04       2.76 f
+  u_DataPath/u_exmemreg/takeBranch_out_reg/D (HS65_LL_DFPQX4)
+                                                          0.00       2.76 f
+  data arrival time                                                  2.76
+
+  clock clk (rise edge)                                   3.00       3.00
+  clock network delay (ideal)                             0.00       3.00
+  clock uncertainty                                      -0.15       2.85
+  u_DataPath/u_exmemreg/takeBranch_out_reg/CP (HS65_LL_DFPQX4)
+                                                          0.00       2.85 r
+  library setup time                                     -0.09       2.76
+  data required time                                                 2.76
+  --------------------------------------------------------------------------
+  data required time                                                 2.76
+  data arrival time                                                 -2.76
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.00
+
+
+1
