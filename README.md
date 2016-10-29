@@ -7,6 +7,7 @@ This readme contains all informations about the design.  The repo is structured 
 * /synthesis: synthesizable (no IRAM and DRAM) version of the DLX, syntesis scripts and results (on Synopsys Design Compiler);
 * /physical_layout: all about the physical design based on the 45nm technology (in Cadence Encounter).
 
+Licensing: this work is released under the standard MIT license but we (the authors) appreciate when we are notified of where and how our work is used.  We are simply curious about how this project can help you and why you are interested in it.
 
 ## Summary
 This project consist in the design and implementation of an advanced DLX processor. The design is based on the conceptual processor originally proposed by D. Patterson and J. Hennessy.
