@@ -29,11 +29,11 @@ With respect to the basic implementation, we have added the following features:
  3. Execute
  4. Memory 
  5. Writeback
- 6. ControlUnit
- 7. PipelineRegisters
+ 6. Control Unit
+ 7. Pipeline Registers
 3. Implementation 12
- 1. 65nmSynthesis
- 2. 45nmSynthesis
+ 1. 65nm Synthesis
+ 2. 45nm Synthesis
 4. Conclusions
 5. References
 6. Appendix A: Instruction set
@@ -43,9 +43,9 @@ With respect to the basic implementation, we have added the following features:
 
 The DLX is a MIPS-like 32-bit RISC processor. It is Based on a 5-stage in-order integer pipeline (fetch, decode, execute, memory, writeback).
 Memory is accessed through load and store instructions (big-endian mode). Two possible memory addressing modes are possible: immediate and displacement. The processor generates word-aligned addresses. However, it is also possible to perform unaligned accesses to the memory by using a subset of load/store instructions (lbu, lb, lhu, sb).
-There are 32 general purpose 32-bit integer registers, organized into a register file (R0 - R31). Register R0 can only be read and it stores the constant value 0. Register R31 is used for storing the return address in case of a subroutine call (jal/jalr instructions). A non-addressable special register (Processor Status Word, PSW) contains status flags of the processor. It’s content can be placed into a general purpose register by using the movs2i instruction.
-Instructions have a fixed length of categories (table 1.1).
-32 bits and a specific format. They are divided into three main
+There are 32 general purpose 32-bit integer registers, organized into a register file (R0 - R31). Register R0 can only be read and it stores the constant value 0. Register R31 is used for storing the return address in case of a subroutine call (jal/jalr instructions) but can used for normal operations as well. A non-addressable special register (Processor Status Word, PSW) contains status flags of the processor. It’s content can be placed into a general purpose register by using the movs2i instruction.
+Instructions have a fixed length of 32 bits and a specific format. They are divided into three main categories (table 1.1).
+ 
 
 ![Alt text](./mdimgs/tab1.png?raw=true "Example")
 
@@ -54,19 +54,18 @@ Instructions have a fixed length of categories (table 1.1).
 Since the processor supports the branch delay slot, it is within the programmer’s responsibility to insert a NOP instruction after each branch and jump instruction in order to avoid unwanted behavior. Furthermore, another programmer’s responsibility is related to the correct reading of the PSW register. Due to the pipelined structure of the processor, the register must be read (using the movs2i instruction) immediately after the instruction that might have generated the overflow (otherwise the overflow detection could be missed). In case of an unaligned access to the memory instead, the programmer has to wait one clock cycle before reading the PSW. A detailed benchmark has been provided in order to describe the latter case.
 Although the processor generates word-aligned addresses, there are additional circuits embedded in the processor that translate those addresses into unaligned addresses. Both IRAM and DRAM are fed with these addresses. Any memory that is used must be compliant with these addresses. Moreover, the DRAM controller has to implement a specific protocol in order to exchange data with the processor, allowing all types of memory instructions presented here.
 
-## Functonal schema
+## Functional schema
 
 ### Fetch
 
 It is made of the following subunits:
 
 * Mux Jump and Mux Branch: they feed the PC register with the right addresses, depending whether a branch/jump instruction has been executed;
-* PC: the Program Counter register stores the address of the instruction to be processed. It is worth noting that it’s controlled by the HDU (see 2.2) for avoiding new data being loaded (stall mechanism);
+* PC: the Program Counter register stores the address of the instruction to be processed. It is worth noting that it’s controlled by the HDU for avoiding new data being loaded (stall mechanism);
 * IRAM block: it’s the unit responsible for exchanging data with the IRAM. It is composed of two MMU units, which translate the word-aligned address into a unaligned address. It also receives a Flush signal, which is used for flushing the pipeline in case of a branch or jump instruction;
 * Increment PC: it increments the current value of the program counter.
 
 ![Alt text](./mdimgs/fetch.png?raw=true "Example")
-![Alt text](./mdimgs/tab2.png?raw=true "Example")
 
 ### Decode
 
@@ -76,7 +75,9 @@ It is made of the following subunits:
 * Hazard Detection Unit (HDU): collaborates with the forwarding unit in the Execute stage. It inserts a NOP (with the Mux stall) to avoid hazards and controls registers such that instructions in the pipeline are stalled. Due to the presence of the forwarding unit, the only hazard that this unit handles is the one raised by a load instruction followed by another instruction, which in turn tries to use the same register that has to be written by the load. As a matter of example, table 2.1 illustrates how, without the HDU, wrong data will be used by the ADD instruction. By introducing the HDU we obtain a behavior such as the one in in table 2.2. Where S denotes the presence of a stall, that is a NOP has been forced into the pipeline;
 * Mux stall: it is controlled directly by the HDU, it forces the control word of a NOP.
 
+![Alt text](./mdimgs/tab2.png?raw=true "Example")
 ![Alt text](./mdimgs/decode.png?raw=true "Example")
+
 
 ### Execute
 
@@ -89,12 +90,17 @@ It is made of the following subunits:
 
 ### Memory
 
-* DRAM: Asynchronous read and write RAM1. The data ram is where data can be read/written and this implementation features basic MMU circuits. Basic behavior of MMU IN: In case of sw and lw instr. only addresses aligned to multiples of 4 are permitted (otherwise the unaligned flag is set in the PSW); in case of a lhu the address must be multiple of 2; in all other cases (sb, lb, lbu). The MMU Out instead is responsible for extracting and sending out the correct portion of a word out of the DRAM. These two MMUs are provided with the processor core. As previously mentioned, the chosen DRAM must support a particular protocol for exchanging data with these units. In addition to the standard signals for data and address, four more signals should be present on the memory controller interface: read op, write op, nibble (2bit signal), write byte.
+* DRAM: Asynchronous read and write RAM *(1)*. The data ram is where data can be read/written and this implementation features basic MMU circuits. Basic behavior of MMU IN: In case of sw and lw instr. only addresses aligned to multiples of 4 are permitted (otherwise the unaligned flag is set in the PSW); in case of a lhu the address must be multiple of 2; in all other cases (sb, lb, lbu). The MMU Out instead is responsible for extracting and sending out the correct portion of a word out of the DRAM. These two MMUs are provided with the processor core. As previously mentioned, the chosen DRAM must support a particular protocol for exchanging data with these units. In addition to the standard signals for data and address, four more signals should be present on the memory controller interface: read op, write op, nibble (2bit signal), write byte.
 In case of a read operation, their configuration is:
+
 ![Alt text](./mdimgs/memop1.png?raw=true "Example")
-and the memory returns the content of the address specified on the address port. The behavior can be synthesized with the pseudo-code:
+
+and the memory returns the content of the address specified on the address port. The behavior can be described with the pseudo-code:
+
 ![Alt text](./mdimgs/memop2.png?raw=true "Example")
-if write byte is set to ’1’, it means a byte will be stored into the memory. Hence, the value spec- ified in the nibble signal becomes relevant. The pseudo-code for implementing these operations is:
+
+if write byte is set to ’1’, it means a byte will be stored into the memory. Hence, the value specified in the nibble signal becomes relevant. The pseudo-code for implementing these operations is:
+
 ![Alt text](./mdimgs/memop3.png?raw=true "Example")
 ![Alt text](./mdimgs/memop4.png?raw=true "Example")
 
@@ -102,7 +108,7 @@ if write byte is set to ’1’, it means a byte will be stored into the memory.
 
 
 
-(1) As with the IRAM the DRAM core memory has been removed during synthesis. In this scenario, since the DLX interfaces with an external DRAM signals from the MMU circuits have become I/O ports of the main element.
+*(1) As with the IRAM the DRAM core memory has been removed during synthesis. In this scenario, since the DLX interfaces with an external DRAM signals from the MMU circuits have become I/O ports of the main element.*
 
 ![Alt text](./mdimgs/memory.png?raw=true "Example")
 
@@ -110,6 +116,7 @@ if write byte is set to ’1’, it means a byte will be stored into the memory.
 
 * MemtoReg Mux: used to select where the data comes from (memory or execution stage) and sends it to Execute and Decode stages;
 * Link Mux: it normally passes the destination register address from the instruction or (less frequently) forces the address of R31 (in case of jalr and jal instructions).
+
 ![Alt text](./mdimgs/writeback.png?raw=true "Example")
 
 ### Control Unit
@@ -126,27 +133,32 @@ These registers are used to propagate the instructions, data and control signals
 
 ## Implementation
 
-For what concerns the implementation of the DLX, i.e. synthesis and physical design, we performed five di↵erent types of possible synthesis. Four of them have been executed with a 65nm STM CMOS technology, whereas the last one with a 45nm one.
+For what concerns the implementation of the DLX, i.e. synthesis and physical design, we performed five different types of possible synthesis. Four of them have been executed with a 65nm STM CMOS technology, whereas the last one with a 45nm one.
 
 ### 65nm Synthesis
 
-The first one is an unconstrained synthesis, with a 3ns clock period. We used this synthesis as a base for the others in order to compare di↵erent results.
+The first one is an unconstrained synthesis, with a 3ns clock period. We used this synthesis as a base for the others in order to compare different results.
+
 ![Alt text](./mdimgs/syn1.png?raw=true "Example")
 
 Our intent was to design a low-power processor, hence the second and the third synthesis were focused on power consumption reduction. The second synthesis exploits the Dual Vth assignment technique, aiming at reducing the leakage power of the circuit while maintaining the same clock period (3ns).
 It is worth noting that by using this technique the leakage power has been reduced drastically with respect to the first synthesis:
+
 ![Alt text](./mdimgs/syn2.png?raw=true "Example")
 
 The third synthesis enables the insertion of clock gating elements via Design Compiler. The goal here was to reduce the dynamic power consumption. This approach yielded a negative slack, thus with a clock period of 3ns it’s not feasible to obtain a correct behavior of our system. Furthermore, in order to fully evaluate the benefits of this technique, post-synthesis simulation and analysis with Prime Time are necessary to correctly estimate the switching activity.
+
 ![Alt text](./mdimgs/syn3.png?raw=true "Example")
 ![Alt text](./mdimgs/syn32.png?raw=true "Example")
 
 The final synthesis is similar to the second one (dual Vth assignment) but with a higher clock period. A realistic clock period for a low-power embedded system would certainly be higher than 3ns in order to reduce the dynamic power. A reasonable clock frequency for this kind of system is 16MHz (clock period of 62.5ns).
+
 ![Alt text](./mdimgs/syn4.png?raw=true "Example")
 
 ### 45nm Synthesis
 
 The results of this synthesis have been used to perform the physical layout of the processor with Cadence Encounter. No particular optimizations were performed with this technology as our necessity was to implement the physical design.
+
 ![Alt text](./mdimgs/syn5.png?raw=true "Example")
 ![Alt text](./mdimgs/syn52.png?raw=true "Example")
 
@@ -154,26 +166,31 @@ The results of this synthesis have been used to perform the physical layout of t
 
 A set of 8 assembly programs have been written to test each instruction, possible hazards and peculiar situations that may arise during operation of our device. The processor has proven to work correctly and be robust in anomalous situations.
 The results gathered from simulation and synthesis suggest that there is still space for optimization in order to enhance performance (increased throughput and frequency). Possible future improvements are:
+
 * Anticipate branch evaluation at the decode stage, in order to avoid the 2 clock cycle penalty in case of a branch not taken;
 * Implementation of a branch prediction unit (BPU);
 * Increase the number of pipeline stages (especially in the execution unit) as to reduce the critical
 path and increase the clock frequency.
-These improvements will boost the performance, while damaging the power consumption. Ad- ditional improvements not related to the above two advantages but strictly to functionality could be:
+
+These improvements will boost the performance, while damaging the power consumption. Additional improvements not related to the above two advantages but strictly to functionality could be:
+
 * Exception Handling;
 * Multiplier and Divider.
 
 ## References
 
-1. Mariagrazia Graziano. *”Microelectronic systems”*. Politecnico di Torino, Master’s degree in Computer Engineering. Torino, March - June 2016. Lectures.
+1. M. Graziano. *”Microelectronic systems”*. Politecnico di Torino, Master’s degree in Computer Engineering. Torino, March - June 2016. Lectures.
 2. J. Hennessy, D. Patterson. *”Computer Architecture, Fifth Edition: A Quantitative Approach (The Morgan Kaufmann Series in Computer Architecture and Design)”* (5th ed.) Morgan Kauf- mann Publishers Inc. San Francisco, CA, USA, 2011. Book.
 3. D. Patterson, J. Hennessy. *”Computer Organization and Design, Fourth Edition, Fourth Edition: The Hardware/Software Interface”* (4th ed.) Morgan Kaufmann Publishers Inc. San Francisco, CA, USA, 2008. Book.
 
 ## Appendix A: Instruction set
 
 The supported instructions are here reported in no particular order.
+
 ![Alt text](./mdimgs/instset.png?raw=true "Example")
 
 ## Appendix B: DLX Datapath Schematic
+
 ![Alt text](./mdimgs/dp.png?raw=true "Example")
 
 
